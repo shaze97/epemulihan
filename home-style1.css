@@ -9,7 +9,7 @@ body{
   }
 /* Slideshow container */
 .slideshow-container {
-  width: 100%;
+  width: 90%;
   padding:30px 35px 10px 15px;
   position: absolute;
   top:50%;
