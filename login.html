@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{
+    background-color:#E6E6FA;
+}
+
+form{
+    background-color: white;
+    padding:20px;
+    margin:0 auto;
+}
+
+.container form{
+    position:relative;
+    width:400px;
+    height:550px;
+    background-color: white; /* rgba(196, 68, 68, 0.836) */
+    z-index:10000;
+    padding:20px 20px;
+    color:black;
+    border-radius:10px;
+    border:none;
+    margin-top: 40px;
+}
+
+img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    padding:7px;
+    border:none; 
+    border:1px solid black;
+    box-sizing:border-box; 
+}
+
+input[type=password]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    padding:7px;
+    border:none;
+    border:1px solid black;
+    box-sizing:border-box;
+    z-index:10000;
+}
+
+input[type=submit]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    border:none;
+    color:white;
+    background-color: rgb(104, 104, 241);
+    box-sizing:border-box;
+    
+}
+
+.forgot{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    color: #a4a4e4;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <form action="login.php" method="POST">
+    <img src="profile.png" alt="profile" width="150px" height="150px"><br>
+    <label for="idno">Staff Id</label><br><br>
+    <input type="text" id="idno" name="id" autofocus placeholder="Enter ID"><br><br>
+    <label for="password">Password</label><br><br>
+    <input type="password" id="password" name="password" placeholder="Enter Password"><br><br><br>
+    <input type="submit" name="submit" value="Log-in as Teacher">
+    <p style="text-align:center;">or</p>
+    <input type="submit" name="submit" value="Log-in as Staff" formaction="login_staff.php"><br>
+    <p style="text-align:center;"><i style="font-size:24px" class="fa">&#xf023;</i><a href="confirm_email.html" class="forgot"> forgot your password?</a></p>
+    </form>
+</div>
+</body>
+</html>

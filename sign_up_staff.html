@@ -1,0 +1,203 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<style>
+body{
+    background-color:#E6E6FA;
+}
+
+form{
+    
+    padding:20px;
+    margin:0 auto;
+}
+
+fieldset{
+    padding:30px;
+}
+.container form{
+    position:relative;
+    width:1000px;
+    height:750px;
+    z-index:10000;
+    padding:20px 20px;
+    color:black;
+    border-radius:10px;
+    margin-top: 10px;
+    /*text-align: center;*/
+}
+
+input[type=file]{
+    text-align: center;
+}
+
+img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text]{
+    width:800px;
+    height:25px;
+    border-radius:2px;
+    border:1px solid black; 
+    box-sizing:border-box; 
+    padding:10px;
+}
+
+input[type=password]{
+    width:800px;
+    height:25px;
+    border-radius:2px;
+    border:1px solid black; 
+    box-sizing:border-box;
+    z-index:10000;
+    padding:10px;
+}
+
+input[type=submit]{
+    width:300px;
+    height:35px;
+    border-radius:15px;
+    border:none;
+    box-sizing:border-box;
+    color:white;
+    background-color: #5151f5;
+    
+}
+
+input[type=reset]{
+    width:300px;
+    height:35px;
+    border-radius:15px;
+    border:none;
+    box-sizing:border-box;
+    color:white;
+    background-color: #5151f5;
+    
+}
+
+a:hover{
+    color: #E6E6FA;
+}
+
+table tr td{
+    padding:10px;
+}
+
+.photo{
+    text-align: center;
+}
+.submit-btn{
+    text-align: center;
+}
+
+legend{
+    font-weight: bold;
+}
+
+fieldset{
+    border-radius: 5px;
+}
+
+select{
+    height:25px;
+}
+
+</style>
+</head>
+<body>
+    <h2 style="text-align: center;">Staff Register Form</h2>
+<div class="container">
+    <form action="insert_staff.php" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Details</legend>
+        <img src="profile.png" alt="profile" width="150px" height="150px"><br>
+        <div class="photo">
+        <label for="myimage">Profile Photo :</label>
+        <input type="file" id="myimage" name="photo"><br><br>
+        </div>
+        <legend>Personal Details</legend><br>
+        <table>
+            <tr>
+                <td><label for="name">Name :</label></td>
+                <td>
+                    <input type="text" id="name" name="name"  autofocus>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="ic">IC Number :</label></td>
+                <td>
+                    <input type="text" id="ic" name="icno" placeholder="xxxxxx-xx-xxxx" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="address">Address :</label></td>
+                <td>
+                    <input type="text" id="address" name="address">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone Number :</label></td>
+                <td><input type="text" id="phone" name="phone" placeholder="xxx-xxxxxxx(x)" pattern="[0-9]{3}-[0-9]{7,8}"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email :</label></td>
+                <td>
+                    <input type="text" id="email" name="email" placeholder="emailname@gmail.com">
+                </td>
+            </tr>
+        </table><br>
+        <legend>Log-in details</legend><br>
+        <table>
+            <tr>
+                <td style="width:100px;"><label for="idno">Staff Id :</label></td>
+                <td >
+                    <input type="text" id="idno" name="id">
+                </td>
+            </tr>
+            <tr>
+                <td style="width:100px;"><label for="password">Password :</label></td>
+                <td><input type="password" id="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i></td>
+            </tr>
+        </table><br>
+        <legend>Job Position</legend><br>
+        <table>
+            <tr>
+                <td style="width:100px;"><label for="position">Position :</label></td>
+                <td>
+                    <select name="post" id="position">
+                        <option value="Penolong PPD Pemulihan Khas">Penolong PPD Pemulihan Khas</option>
+                        <option value="Penolong PPD Pendidikan Khas">Penolong PPD Pendidikan Khas</option>
+                    </select>
+                </td>  
+            </tr>
+        </table>
+    </fieldset> <br>
+        <div class="submit-btn">
+             <input type="submit" name="submit" value="Sign-up as Staff"> or 
+             <input type="reset" name="reset" value="Reset"><br>
+        </div><br>
+  </form>
+
+  <script>
+    
+    //eye icon 
+    const togglePassword = document.querySelector('#togglePassword');
+      var password = document.querySelector('#password');
+    
+      togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+ </script>
+</div>
+</body>
+</html>
+
+

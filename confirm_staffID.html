@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<style>
+body{
+    background-color:#E6E6FA;
+}
+
+form{
+    background-color: white;
+    padding:20px;
+    margin:0 auto;
+}
+
+.container form{
+    position:relative;
+    width:400px;
+    height:350px;
+    background-color: white; /* rgba(196, 68, 68, 0.836) */
+    z-index:10000;
+    padding:20px 20px;
+    color:black;
+    border-radius:10px;
+    border:none;
+    margin-top: 40px;
+}
+
+img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    padding:7px;
+    border:none; 
+    border:1px solid black;
+    box-sizing:border-box; 
+}
+
+input[type=password]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    padding:7px;
+    border:none;
+    border:1px solid black;
+    box-sizing:border-box;
+    z-index:10000;
+}
+
+input[type=submit]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    border:none;
+    color:white;
+    background-color: rgb(104, 104, 241);
+    box-sizing:border-box;
+    
+}
+
+.forgot{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    color: #a4a4e4;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <form action="forgot.php" method="POST">
+    <h3>Please key-in your email to reset your password.</h3>
+    <h2 style="text-align: center;">Email</h2>
+    <label for="password">Enter Email</label><br><br>
+    <input type="submit" name="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

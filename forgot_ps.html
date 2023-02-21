@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<style>
+body{
+    background-color:#E6E6FA;
+}
+
+form{
+    background-color: white;
+    padding:20px;
+    margin:0 auto;
+}
+
+.container form{
+    position:relative;
+    width:400px;
+    height:350px;
+    background-color: white; /* rgba(196, 68, 68, 0.836) */
+    z-index:10000;
+    padding:20px 20px;
+    color:black;
+    border-radius:10px;
+    border:none;
+    margin-top: 40px;
+}
+
+img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    padding:7px;
+    border:none; 
+    border:1px solid black;
+    box-sizing:border-box; 
+}
+
+input[type=password]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    padding:7px;
+    border:none;
+    border:1px solid black;
+    box-sizing:border-box;
+    z-index:10000;
+}
+
+input[type=submit]{
+    width:400px;
+    height:35px;
+    border-radius:5px;
+    border:none;
+    color:white;
+    background-color: rgb(104, 104, 241);
+    box-sizing:border-box;
+    
+}
+
+.forgot{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    color: #a4a4e4;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <form action="#" method="POST">
+    <h2 style="text-align: center;">Forgot Password</h2>
+    <label for="password">Enter New Password</label><br><br>
+    <input type="password" id="password" name="password" placeholder="New Password"><i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i><br><br>
+    <label for="c_password">Confirm Password</label><br><br>
+    <input type="password" id="c_password" name="c_password" placeholder="Confirm Password"><br><br><br>
+    <input type="submit" name="reset" value="Reset Password">
+    </form>
+</div>
+<script>   
+  //eye icon 
+  const togglePassword = document.querySelector('#togglePassword');
+    var password = document.querySelector('#password');
+  
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+  });
+
+  var password = document.getElementById("password")
+    , confirm_password = document.getElementById("c_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+
+</body>
+</html>
